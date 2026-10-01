@@ -1,0 +1,13 @@
+PocketSmart AI: Your Smart Budget & Recommendation Assistant
+
+Purpose:
+Help users understand their monthly income, expenses, available balance and savings target.
+
+Main modules:
+- app/main.py: FastAPI routes
+- app/budget_service.py: budget calculations and recommendations
+- app/templates/: web pages
+- app/static/style.css: responsive design
+- requirements.txt: Python dependencies
+
+The project is designed to run without an API key.

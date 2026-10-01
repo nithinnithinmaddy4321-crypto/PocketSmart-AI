@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}PocketSmart AI - Budget Assistant{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Take control of your monthly budget</h1>
+    <p>Enter your income and expenses to get a simple budget summary and personalized recommendations.</p>
+</section>
+
+<section class="card">
+    <h2>Monthly Budget Details</h2>
+
+    <form method="post" action="/analyze">
+        <label for="name">Name</label>
+        <input id="name" name="name" required placeholder="Your name">
+
+        <div class="grid">
+            <div>
+                <label for="income">Monthly Income (₹)</label>
+                <input id="income" name="income" type="number" min="0.01" step="0.01" required placeholder="30000">
+            </div>
+            <div>
+                <label for="savings_goal">Savings Goal (₹)</label>
+                <input id="savings_goal" name="savings_goal" type="number" min="0" step="0.01" required placeholder="5000">
+            </div>
+        </div>
+
+        <h3>Monthly Expenses</h3>
+
+        <div class="grid">
+            <div>
+                <label for="housing">Housing / Rent (₹)</label>
+                <input id="housing" name="housing" type="number" min="0" step="0.01" value="0" required>
+            </div>
+            <div>
+                <label for="food">Food & Groceries (₹)</label>
+                <input id="food" name="food" type="number" min="0" step="0.01" value="0" required>
+            </div>
+            <div>
+                <label for="transport">Transport (₹)</label>
+                <input id="transport" name="transport" type="number" min="0" step="0.01" value="0" required>
+            </div>
+            <div>
+                <label for="utilities">Utilities (₹)</label>
+                <input id="utilities" name="utilities" type="number" min="0" step="0.01" value="0" required>
+            </div>
+            <div>
+                <label for="entertainment">Entertainment (₹)</label>
+                <input id="entertainment" name="entertainment" type="number" min="0" step="0.01" value="0" required>
+            </div>
+            <div>
+                <label for="other">Other Expenses (₹)</label>
+                <input id="other" name="other" type="number" min="0" step="0.01" value="0" required>
+            </div>
+        </div>
+
+        <button type="submit">Analyze My Budget</button>
+    </form>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <h3>📊 Budget Summary</h3>
+        <p>See your total expenses and monthly balance.</p>
+    </div>
+    <div class="feature">
+        <h3>💡 Recommendations</h3>
+        <p>Get practical suggestions based on your spending.</p>
+    </div>
+    <div class="feature">
+        <h3>🎯 Savings Focus</h3>
+        <p>Compare your available surplus with your savings goal.</p>
+    </div>
+</section>
+{% endblock %}

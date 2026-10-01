@@ -1,0 +1,156 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+header {
+    background: #173f5f;
+    color: white;
+    padding: 28px 0;
+}
+
+.container {
+    width: min(950px, 92%);
+    margin: 0 auto;
+}
+
+.brand {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+header p {
+    margin: 7px 0 0;
+    opacity: .9;
+}
+
+main {
+    padding: 35px 0 55px;
+}
+
+.hero {
+    padding: 10px 0 25px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.card, .feature, .metric {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.07);
+}
+
+.card {
+    padding: 25px;
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin: 15px 0 7px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 18px;
+}
+
+button, .button {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 13px 19px;
+    border: 0;
+    border-radius: 9px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.features, .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.feature {
+    padding: 22px;
+}
+
+.summary-grid {
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 22px;
+}
+
+.metric {
+    padding: 20px;
+}
+
+.metric span {
+    display: block;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.metric strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 20px;
+}
+
+.eyebrow {
+    color: #2563eb;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.status {
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.recommendation {
+    background: #eff6ff;
+    padding: 14px;
+    border-radius: 9px;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.breakdown div {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+@media (max-width: 750px) {
+    .grid, .features, .summary-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}PocketSmart AI - Budget Result{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <p class="eyebrow">BUDGET ANALYSIS</p>
+    <h1>Hello, {{ data.name }} 👋</h1>
+    <p>Here is your monthly budget summary.</p>
+</section>
+
+<section class="summary-grid">
+    <div class="metric">
+        <span>Monthly Income</span>
+        <strong>{{ result.money(data.income) }}</strong>
+    </div>
+    <div class="metric">
+        <span>Total Expenses</span>
+        <strong>{{ result.money(result.total_expenses) }}</strong>
+    </div>
+    <div class="metric">
+        <span>Remaining</span>
+        <strong>{{ result.money(result.remaining) }}</strong>
+    </div>
+    <div class="metric">
+        <span>Expense Ratio</span>
+        <strong>{{ "%.1f"|format(result.expense_percent) }}%</strong>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Budget Status</h2>
+    <p class="status">{{ result.status }}</p>
+    <p>Your largest expense category is <strong>{{ result.largest_category }}</strong>.</p>
+</section>
+
+<section class="card">
+    <h2>💡 Smart Recommendations</h2>
+    {% for recommendation in result.recommendations %}
+        <div class="recommendation">✓ {{ recommendation }}</div>
+    {% endfor %}
+</section>
+
+<section class="card">
+    <h2>Expense Breakdown</h2>
+    <div class="breakdown">
+        <div><span>Housing</span><strong>{{ result.money(data.housing) }}</strong></div>
+        <div><span>Food</span><strong>{{ result.money(data.food) }}</strong></div>
+        <div><span>Transport</span><strong>{{ result.money(data.transport) }}</strong></div>
+        <div><span>Utilities</span><strong>{{ result.money(data.utilities) }}</strong></div>
+        <div><span>Entertainment</span><strong>{{ result.money(data.entertainment) }}</strong></div>
+        <div><span>Other</span><strong>{{ result.money(data.other) }}</strong></div>
+    </div>
+</section>
+
+<a class="button" href="/">Analyze Another Budget</a>
+{% endblock %}
